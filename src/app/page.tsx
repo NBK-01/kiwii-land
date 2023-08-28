@@ -1,15 +1,15 @@
-"use client"
-import { Button } from '@/components/ui/button'
-import {Toaster, toast} from "sonner"
-import Image from 'next/image'
+
+import { HeroCardGrid } from "@/components/shared/cards"
+import Hero from "@/components/shared/hero"
+import { Button } from "@/components/ui/button"
+import { toast, Toaster } from "sonner"
 
 export default function Home() {
   return (
   <>
-  <Toaster/>
-  <h1 className="text-6xl"> Hello </h1>
-  <Button onClick = {() => toast.success("Done Deal")}> Test </Button>
-
+    <Toaster richColors position="top-center"/>
+    <Hero/>
+    {/* <HeroCardGrid/> */}
   </>
-       )
+  )
 }
