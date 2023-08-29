@@ -9,12 +9,12 @@ const Hero = () => {
   return (
     <>
     <div className="container">
-      <div className="flex flex-col md:py-44 py-24">
+      <div className="flex flex-col md:py-44 py-20">
         <Badge className="mx-auto my-3 text-sm" variant="secondary"> Beta under construction 👨🏻‍🔬</Badge>
-        <h1 style={Main.style} className="lg:text-5xl text-2xl mx-auto text-center leading-tight font-medium">
+        <h1 style={Main.style} className="lg:text-5xl text-xl mx-auto text-center leading-tight font-medium">
            One easy platform to handle your <br/> productized-service agency
         </h1>
-        <p className="text-lg text-neutral-400 mx-auto max-w-2xl text-center mt-5" style={Sub.style}>
+        <p className="text-sm text-neutral-400 mx-auto max-w-2xl text-center mt-5" style={Sub.style}>
             Control your subscription based agency all in one dashboard, give your clients their own dashboards too for a smooth & async workflow for everyone
         </p>
         <div className="mx-auto items-center">
