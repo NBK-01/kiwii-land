@@ -2,6 +2,7 @@ import { Main, Sub } from '@/lib/fonts'
 import React from 'react'
 import Image from 'next/image'
 import { WaitlistForm } from "@/components/shared/forms"
+import { Badge } from '../ui/badge'
 
 
 const Hero = () => {
@@ -9,6 +10,7 @@ const Hero = () => {
     <>
     <div className="container">
       <div className="flex flex-col py-44">
+        <Badge className="mx-auto my-3 text-sm" variant="secondary"> Beta under construction 👨🏻‍🔬</Badge>
         <h1 style={Main.style} className="text-5xl mx-auto text-center leading-tight font-medium">
            One easy platform to handle your <br/> productized-service agency
         </h1>

@@ -20,8 +20,8 @@ const Navbar = () => {
           <Link href="https://github.com/NBK-01" target="_blank">
             <Image src="/git-logo.png" className="" width={20} height={20} alt="twitter/x logo"/>
           </Link>
-          <Link href="/"> 
-            <Button style={Main.style}> Join the waitlist </Button>
+          <Link href="https://twitter.com/NBK_dev/status/1689000666000236544?s=20" target="_blank"> 
+            <Button style={Main.style}> A post on Kiwii </Button>
           </Link>
         </div>
     </div>

@@ -3,6 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
 import { Button } from "@/components/ui/button"
+import {Loader} from "lucide-react"
 import {
   Form,
   FormControl,
@@ -14,13 +15,23 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { useForm } from "react-hook-form"
+import { Toaster, toast } from "sonner"
+import { cache, useState } from "react"
+import React from "react"
+// import {prisma} from "@/lib/prisma"
+import { createWaitlist } from "@/lib/createWaitlist"
+import axios from "axios";
+
 
 const formSchema = z.object({
   email: z.string().email({message: ""}),
  
 })
 
+
 export function WaitlistForm() {
+  const [isLoading, setIsLoading] = React.useState<boolean>(false)
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -29,12 +40,23 @@ export function WaitlistForm() {
   })
 
   // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values)
+   async function onSubmit(values: z.infer<typeof formSchema>) {
+    setIsLoading(true)
+    const res = await axios.post("/api/createWaitlist", {
+      method: "POST",
+      email: JSON.stringify(values.email),
+   })
+   
+    setIsLoading(false)
+    toast.success("You're in! Expect updates very soon")
+    
+    return res
   }
 
   return (
-    <Form {...form}>
+    <>
+      <Toaster richColors position="top-center"/>    
+      <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="flex max-w-4xl items-center space-x-2">
         <FormField
             control={form.control}
@@ -42,7 +64,7 @@ export function WaitlistForm() {
             render={({ field }) => (
             <FormItem className="mt-7">
                 <FormControl>
-                <Input className="w-[400px] py-5" placeholder="hello@kiwii.com" {...field} />
+                <Input disabled={isLoading} className="w-[400px] py-5" placeholder="hello@kiwii.com" {...field} />
                 </FormControl>
                 <FormDescription>
                   Join the waitlist to get early-access and benefits!
@@ -51,8 +73,14 @@ export function WaitlistForm() {
             </FormItem>
             )}
         />
-        <Button type="submit" size="lg" className="my-auto">Submit</Button>
+        <Button disabled={isLoading} className="my-auto" size="lg">
+              {isLoading && (
+                <Loader className="mr-2 h-4 w-4 animate-spin" />
+              )}
+              Join
+            </Button>
         </form>
     </Form>
+    </>
   )
 }
