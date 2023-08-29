@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="overflow-hidden">
+      <body className="md:overflow-scroll overflow-hidden">
         <Navbar/> 
         {children}
         <Analytics/>
