@@ -48,7 +48,7 @@ export function WaitlistForm() {
    })
    
     setIsLoading(false)
-    toast.success("You're in! Expect updates very soon")
+    toast.success("You're in! Expect updates very soon...")
     
     return res
   }
