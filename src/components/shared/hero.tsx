@@ -11,7 +11,7 @@ const Hero = () => {
     <div className="container">
       <div className="flex flex-col py-44">
         <Badge className="mx-auto my-3 text-sm" variant="secondary"> Beta under construction 👨🏻‍🔬</Badge>
-        <h1 style={Main.style} className="text-5xl mx-auto text-center leading-tight font-medium">
+        <h1 style={Main.style} className="lg:text-5xl text-2xl mx-auto text-center leading-tight font-medium">
            One easy platform to handle your <br/> productized-service agency
         </h1>
         <p className="text-lg text-neutral-400 mx-auto max-w-2xl text-center mt-5" style={Sub.style}>
@@ -23,7 +23,7 @@ const Hero = () => {
       </div> 
     </div>
 
-    <Image src="/grad-kiwii.png" className="absolute top-[455px] mx-auto -z-10" width={2000} height={1200} alt=""/>
+    <Image src="/grad-kiwii.png" className="absolute top-[455px] mx-auto -z-10 hidden lg:block" width={2000} height={1200} alt=""/>
     </>
   )
 }
