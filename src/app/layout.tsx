@@ -6,7 +6,7 @@ import { Analytics } from '@vercel/analytics/react';
 
 
 export const metadata: Metadata = {
-  title: 'Kiwii',
+  title: 'Kiwii - Waitlist',
   description: 'One place for all your agency needs',
 }
 
