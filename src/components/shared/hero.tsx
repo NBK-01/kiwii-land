@@ -15,7 +15,7 @@ const Hero = () => {
         <p className="text-md text-neutral-400 mx-auto max-w-4xl text-center mt-5" style={Sub.style}>
 
 
-		Imagine each day with a little extra excitement—a moment that brightens your day and keeps you coming back for more. We're crafting an experience that does just that, and we can't wait to share it with you.
+		Imagine each day with a little extra excitement—a moment that brightens your day and keeps you coming back for more. Were crafting an experience that does just that, and we can wait to share it with you.
 
 
         </p>

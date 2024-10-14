@@ -105,7 +105,7 @@ export default function KiwiiLandingPage() {
               </button>
             </div>
             <div className="grid grid-cols-3 gap-4">
-              <FacebookShareButton url={shareUrl} quote={title}>
+              <FacebookShareButton url={shareUrl}>
                 <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
                   <FacebookIcon size={48} round />
                 </motion.div>
@@ -230,7 +230,7 @@ export default function KiwiiLandingPage() {
             >
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-              <h2 className="text-3xl font-bold mb-2 text-gray-800"> Don't miss out on the big reveal!  </h2>
+              <h2 className="text-3xl font-bold mb-2 text-gray-800"> Don&apos;t miss out on the big reveal!  </h2>
 			  <h1 className="text-sm font-normal mb-6 text-gray-500"> Enter your email below to stay updated and secure your spot for early access. </h1>
                   <FormField
                     control={form.control}
