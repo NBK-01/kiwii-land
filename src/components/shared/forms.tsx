@@ -56,19 +56,16 @@ export function WaitlistForm() {
     <>
       <Toaster richColors position="top-center"/>    
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col md:flex-row max-w-4xl items-center space-x-2 space-y-3 md:space-y-0">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="">
         <FormField
             control={form.control}
             name="email"
             render={({ field }) => (
             <FormItem className="mt-7">
                 <FormControl>
-                <Input disabled={isLoading} className="md:w-[400px] w-[280px] py-5" placeholder="hello@kiwii.com" {...field} />
+                <Input disabled={isLoading} {...field} />
                 </FormControl>
-                <FormDescription>
-                  Join the waitlist to get early-access and benefits!
-                </FormDescription>
-                <FormMessage />
+            <FormMessage />
             </FormItem>
             )}
         />
