@@ -58,15 +58,15 @@ export default function KiwiiLandingPage() {
           top: document.documentElement.scrollHeight,
           behavior: 'smooth'
         })
-      }, 500)
+      }, 1500)
       return () => clearTimeout(timer)
     }
   }, [isMobile])
 
   const gradientProps = useSpring({
-    from: { opacity: 0.7 },
+    from: { opacity: 0.5 },
     to: { opacity: 1 },
-    config: { duration: 2000 },
+    config: { duration: 1200 },
     loop: { reverse: true },
   })
 
