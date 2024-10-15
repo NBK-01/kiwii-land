@@ -223,7 +223,7 @@ export default function KiwiiScratchCard() {
           <span className="text-lg font-bold text-green-700">{xp}/100 XP</span>
         </div>
         <div className="relative mb-4">
-          <Progress value={xp} className="w-full h-4 bg-green-200 rounded-full overflow-hidden" indicatorClassName="bg-gradient-to-r from-green-400 to-green-600" />
+          <Progress value={xp} className="w-full h-4 bg-green-200 rounded-full overflow-hidden" />
           <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
             <span className="text-xs font-bold text-white drop-shadow">{xp}%</span>
           </div>
