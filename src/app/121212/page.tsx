@@ -250,7 +250,7 @@ export default function KiwiiScratchCard() {
           <DialogHeader>
             <DialogTitle>Congratulations!</DialogTitle>
             <DialogDescription>
-              <p className="text-xl font-bold text-green-600 mt-4">You've won a prize from {sponsor.name}!</p>
+              <p className="text-xl font-bold text-green-600 mt-4">You have won a prize from {sponsor.name}!</p>
               <p className="text-sm text-gray-600 mt-2">Scan the QR code to claim your reward.</p>
             </DialogDescription>
           </DialogHeader>
