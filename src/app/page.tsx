@@ -30,6 +30,7 @@ import {
   LinkedinIcon,
   WhatsappIcon,
   EmailIcon,
+  XIcon
 } from 'react-share'
 import axios from "axios"
 
@@ -58,15 +59,15 @@ export default function KiwiiLandingPage() {
           top: document.documentElement.scrollHeight,
           behavior: 'smooth'
         })
-      }, 1500)
+      }, 500)
       return () => clearTimeout(timer)
     }
   }, [isMobile])
 
   const gradientProps = useSpring({
-    from: { opacity: 0.5 },
+    from: { opacity: 0.7 },
     to: { opacity: 1 },
-    config: { duration: 1200 },
+    config: { duration: 2000 },
     loop: { reverse: true },
   })
 
@@ -110,11 +111,7 @@ export default function KiwiiLandingPage() {
           className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
           onClick={() => setIsShareModalOpen(false)}
         >
-          <motion.div
-            initial={{ scale: 0.5, rotate: -10 }}
-            animate={{ scale: 1, rotate: 0 }}
-            exit={{ scale: 0.5, rotate: 10 }}
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          <div
             className="bg-white p-6 rounded-lg shadow-xl"
             onClick={(e) => e.stopPropagation()}
           >
@@ -126,32 +123,22 @@ export default function KiwiiLandingPage() {
             </div>
             <div className="grid grid-cols-3 gap-4">
               <FacebookShareButton url={shareUrl}>
-                <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                  <FacebookIcon size={48} round />
-                </motion.div>
+                <FacebookIcon size={48} round />
               </FacebookShareButton>
               <TwitterShareButton url={shareUrl} title={title}>
-                <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                  <TwitterIcon size={48} round />
-                </motion.div>
+                <XIcon size={48} round />
               </TwitterShareButton>
               <LinkedinShareButton url={shareUrl} title={title}>
-                <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                  <LinkedinIcon size={48} round />
-                </motion.div>
+                <LinkedinIcon size={48} round />
               </LinkedinShareButton>
               <WhatsappShareButton url={shareUrl} title={title}>
-                <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                  <WhatsappIcon size={48} round />
-                </motion.div>
+                <WhatsappIcon size={48} round />
               </WhatsappShareButton>
               <EmailShareButton url={shareUrl} subject={title} body="Check out this awesome new app!">
-                <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                  <EmailIcon size={48} round />
-                </motion.div>
+                <EmailIcon size={48} round />
               </EmailShareButton>
             </div>
-          </motion.div>
+          </div>
         </motion.div>
       )}
     </AnimatePresence>
@@ -182,14 +169,12 @@ export default function KiwiiLandingPage() {
             <div className="flex items-center">
             </div>
             <div className="flex-1 flex justify-end">
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
+              <button
                 className="text-green-600 hover:text-green-800 transition-colors"
                 onClick={() => setIsShareModalOpen(true)}
               >
                 <Share2 className="h-6 w-6" />
-              </motion.button>
+              </button>
             </div>
           </div>
         </div>
@@ -198,53 +183,27 @@ export default function KiwiiLandingPage() {
       <main className="relative z-10 flex-grow flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12">
         <div className="max-w-7xl w-full">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={isMobile ? { opacity: 1 } : { opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: isMobile ? 0 : 0.8 }}
-              className="text-center md:text-left"
-            >
+            <div className="text-center md:text-left">
               <h1 className="text-5xl font-extrabold text-gray-900 mb-4">
                 Something Exciting is Coming Your Way!
               </h1>
-              <motion.p
-                initial={isMobile ? { opacity: 1 } : { opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: isMobile ? 0 : 0.6, delay: isMobile ? 0 : 0.2 }}
-                className="text-xl text-gray-600 mb-2"
-              >
+              <p className="text-xl text-gray-600 mb-2">
                 A daily dose of joy awaits. Be the first to experience it.
-              </motion.p>
-              <motion.p
-                initial={isMobile ? { opacity: 1 } : { opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: isMobile ? 0 : 0.6, delay: isMobile ? 0 : 0.4 }}
-                className="text-lg text-gray-500 mb-6"
-              >
+              </p>
+              <p className="text-lg text-gray-500 mb-6">
                 Get ready for a new kind of excitement!
-              </motion.p>
+              </p>
               <ul className="space-y-4">
                 {bulletPoints.map((point, index) => (
-                  <motion.li
-                    key={index}
-                    initial={isMobile ? { opacity: 1 } : { opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: isMobile ? 0 : 0.5, delay: isMobile ? 0 : 0.6 + index * 0.1 }}
-                    className="flex items-center"
-                  >
+                  <li key={index} className="flex items-center">
                     <span className="mr-2 text-green-500">🥝</span>
                     <span>{point}</span>
-                  </motion.li>
+                  </li>
                 ))}
               </ul>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={isMobile ? { opacity: 1 } : { opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: isMobile ? 0 : 0.8, delay: isMobile ? 0 : 0.2 }}
-              className="bg-white p-8 rounded-lg shadow-2xl transform hover:scale-105 transition-transform duration-300"
-            >
+            <div className="bg-white p-8 rounded-lg shadow-2xl">
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
                   <h2 className="text-3xl font-bold mb-2 text-gray-800">Don&apos;t miss out on the big reveal!</h2>
@@ -278,7 +237,7 @@ export default function KiwiiLandingPage() {
                   </Button>
                 </form>
               </Form>
-            </motion.div>
+            </div>
           </div>
         </div>
       </main>
