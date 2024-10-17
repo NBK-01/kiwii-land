@@ -8,11 +8,7 @@ import { Leaf, Share2, Trophy } from 'lucide-react'
 import confetti from 'canvas-confetti'
 
 const COMPANIES = [
-  { name: 'TechCorp', logo: '/placeholder.svg?height=50&width=50&text=TC' },
-  { name: 'EcoGreen', logo: '/placeholder.svg?height=50&width=50&text=EG' },
-  { name: 'FoodieDelight', logo: '/placeholder.svg?height=50&width=50&text=FD' },
-  { name: 'TravelWise', logo: '/placeholder.svg?height=50&width=50&text=TW' },
-  { name: 'FitnessPro', logo: '/placeholder.svg?height=50&width=50&text=FP' },
+  { name: 'TechCorp'},
 ]
 
 const ACHIEVEMENTS = [
@@ -83,7 +79,6 @@ export default function KiwiiScratchCard() {
       img.onload = () => {
         ctx.drawImage(img, canvas.width / 2 - 25, canvas.height / 2 - 25, 50, 50)
       }
-      img.src = newSponsor.logo
     }
     setIsScratched(false)
   }
@@ -255,7 +250,6 @@ export default function KiwiiScratchCard() {
             </DialogDescription>
           </DialogHeader>
           <div className="flex justify-center">
-            <img src={`/placeholder.svg?height=200&width=200&text=QR+${sponsor.name}`} alt="QR Code" className="w-48 h-48" />
           </div>
           <p className="text-center text-sm text-gray-600 mt-4">Sponsored by {sponsor.name}</p>
         </DialogContent>
