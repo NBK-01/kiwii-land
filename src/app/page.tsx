@@ -128,9 +128,6 @@ export default function KiwiiLandingPage() {
               <TwitterShareButton url={shareUrl} title={title}>
                 <XIcon size={48} round />
               </TwitterShareButton>
-              <LinkedinShareButton url={shareUrl} title={title}>
-                <LinkedinIcon size={48} round />
-              </LinkedinShareButton>
               <WhatsappShareButton url={shareUrl} title={title}>
                 <WhatsappIcon size={48} round />
               </WhatsappShareButton>
