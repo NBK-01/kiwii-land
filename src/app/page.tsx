@@ -236,8 +236,35 @@ export default function KiwiiLandingPage() {
               </Form>
             </div>
           </div>
+          
+          {/* Download Links */}
+          <div className="flex justify-end gap-4 mt-4">
+            <button className="transition-transform hover:scale-105" onClick={() => window.open('https://play.google.com/store/apps/details?id=com.app.kiwiiapp&hl=en&pli=1', '_blank')}>
+              <img 
+                src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" 
+                alt="Get it on Google Play" 
+                className="h-[55px] w-auto"
+              />
+            </button>
+            <button className="transition-transform hover:scale-105" onClick={() => window.open('https://kiwii.shop', '_blank')}>
+              <img 
+				src="/PWA.svg"
+                alt="Get it on Google Play" 
+                className="h-[36px] w-auto"
+              />
+            </button>
+          </div>
         </div>
       </main>
+      
+      {/* Footer */}
+      <footer className="relative z-10 py-6">
+        <div className="text-center">
+          <p className="text-sm text-gray-500">
+           Copyright © {new Date().getFullYear()} KiwiiApp a service provided by <a href="https://disruptor.ventures" className="text-green-500"> Disruptor Ventures </a> LLC. <br/> All rights reserved.
+          </p>
+        </div>
+      </footer>
     </div>
   )
 }
