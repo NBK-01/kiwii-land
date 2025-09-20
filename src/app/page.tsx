@@ -261,7 +261,7 @@ export default function KiwiiLandingPage() {
       <footer className="relative z-10 py-6">
         <div className="text-center">
           <p className="text-sm text-gray-500">
-           Copyright © {new Date().getFullYear()} KiwiiApp a service provided by <a href="https://disruptor.ventures" className="text-green-500"> Disruptor Ventures </a> LLC. <br/> All rights reserved.
+           Copyright © {new Date().getFullYear()} KiwiiApp a service provided by <a href="https://disruptor.ventures" target="_blank" className="text-green-500"> Disruptor Ventures </a> LLC. <br/> All rights reserved.
           </p>
         </div>
       </footer>
