@@ -246,6 +246,13 @@ export default function KiwiiLandingPage() {
                 className="h-[55px] w-auto"
               />
             </button>
+            <button className="transition-transform hover:scale-105" onClick={() => window.open('https://app.kiwii.app', '_blank')}>
+              <img
+                src="/PWA.svg"
+                alt="Open the Kiwii web app"
+                className="h-[36px] w-auto"
+              />
+            </button>
           </div>
         </div>
       </main>
